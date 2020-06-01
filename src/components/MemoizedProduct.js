@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { select_product } from "../store/actions/shoppingCartActions";
 import { Card, Col, Button, Badge } from "react-bootstrap";
@@ -10,15 +10,12 @@ const Product = ({
 	product_id,
 }) => {
 	const dispatch = useDispatch();
-	// const [isProductSelected, selectProduct] = useState(false);
-
 	const cartProducts = useSelector((state) => state.cartProducts);
 	const cartProductsId = cartProducts.map((item) => item.product_id);
 	const test = cartProductsId.includes(product_id);
 
 	const onSelectProduct = (id, event) => {
 		let isSelected = event.target.dataset.selected === "false";
-		// selectProduct((prevState) => !prevState);
 		dispatch(select_product(id, isSelected));
 	};
 

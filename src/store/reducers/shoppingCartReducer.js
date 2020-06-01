@@ -140,7 +140,6 @@ const shoppingCartReducer = (state = initial_state, action) => {
 				totalPriceOfProducts: ___totalPriceOfProducts,
 				discountPriceOfProducts: ___discountPriceOfProducts,
 				mainPriceOfProducts: ___mainPriceOfProducts,
-				// cartProducts: _mainCartProducts,
 			};
 
 		default:
